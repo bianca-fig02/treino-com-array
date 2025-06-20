@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Lista de Produtos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+    <script>
+        let produtos = [
+            { nome: "blusa", preco: 40 },
+            { nome: "calça", preco: 120 },
+            { nome: "meia", preco: 15 },
+            { nome: "pulseira", preco: 20 }
+        ];
+
+        produtos.push({ nome: "tênis", preco: 100 });
+        produtos = produtos.filter(p => p.nome !== "pulseira");
+
+        console.log(produtos);
+    </script>
+</body>
+</html>

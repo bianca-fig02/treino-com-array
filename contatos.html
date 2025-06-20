@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Agenda de Contatos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h1>Meus Contatos</h1>
+    <ul id="lista-contatos"></ul>
+
+    <script>
+        let contatos = [
+            { nome: "José", telefone: "9922-3344" },
+            { nome: "Armando", telefone: "9955-6677" }
+        ];
+
+        contatos.push({ nome: "Bianca", telefone: "9812-3456" });
+
+        contatos = contatos.map(c => 
+            c.nome === "Armando" ? { ...c, telefone: "9100-2345" } : c
+        );
+
+        const lista = document.getElementById("lista-contatos");
+
+        contatos.forEach(contato => {
+            const li = document.createElement("li");
+            li.textContent = `${contato.nome} - ${contato.telefone}`;
+            lista.appendChild(li);
+        });
+    </script>
+</body>
+</html>

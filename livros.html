@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Meus Livros</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+    <script>
+        let livros = [
+            { titulo: "Evelyn Hugo", autor: "Taylor Jenkins Reid", nota: 10 },
+            { titulo: "Carmilla", autor: "Sheridan Le Fanu", nota: 8 }
+        ];
+
+        livros.push({ titulo: "O Hobbit", autor: "J.R.R. Tolkien", nota: 9 });
+
+        livros = livros.filter(livro => livro.titulo !== "Carmilla");
+
+        livros = livros.map(livro => 
+            livro.titulo === "Evelyn Hugo" ? { ...livro, nota: 9.5 } : livro
+        );
+
+        console.log(livros);
+    </script>
+</body>
+</html>
